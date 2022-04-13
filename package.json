@@ -1,0 +1,21 @@
+{
+	"name": "FloatplaneStats",
+	"workspaces": [
+		"Backend",
+		"Frontend",
+		"Types"
+	],
+	"scripts": {
+		"tsc": "tsc -b",
+		"install-types": "cd ./Types && npm install -f",
+		"install-frontend": "cd ./Frontend && npm install -f && npm install -f @floatplanestats/types ../Types",
+		"build": "npm install && npm run install-types && npm run install-frontend && npm run tsc && cd ./Frontend && npm run build",
+		"start": "tsc -b && cd ./Frontend && npm run start",
+		"watch": "tsc -b --watch"
+	},
+	"devDependencies": {
+		"@types/node": "^17.0.23",
+		"prettier": "^2.6.1",
+		"typescript": "^4.6.3"
+	}
+}

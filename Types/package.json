@@ -1,0 +1,21 @@
+{
+	"name": "@floatplanestats/types",
+	"version": "1.0.0",
+	"author": "Inrixia",
+	"license": "ISC",
+	"exports": {
+		"./*": "./dist/*.js"
+	},
+	"typesVersions": {
+		"*": {
+			"*": [
+				"dist/*"
+			]
+		}
+	},
+	"scripts": {
+		"tsc": "tsc && copy /Y package.json dist && copy /Y README.md dist",
+		"send": "npm run tsc && cd ./dist && npm publish",
+		"send-dry": "npm run tsc && cd ./dist && npm publish --dry-run"
+	}
+}
